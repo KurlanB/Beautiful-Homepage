@@ -1,4 +1,5 @@
-try {
+
+async () => { try {
     const res = await fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
     const data = await res.json()
     document.body.style.backgroundImage = `url(${data.urls.regular})`
@@ -8,13 +9,9 @@ try {
 )`
     document.getElementById("author").textContent = `By: Dodi Achmad`
 }
+}
 
-/**
- * Challenge: Update the code below and in the 
- * getCurrentLocation callback to use try...catch
- */
-
-try {
+async () => { try {
     const res = await fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
     if (!res.ok) {
         throw Error("Something went wrong")
@@ -31,6 +28,7 @@ try {
     `
 } catch (err) {
     console.error(err)
+}
 }
 
 function getCurrentTime() {
