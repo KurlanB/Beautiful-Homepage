@@ -1,5 +1,5 @@
 
-async () => { try {
+async function getImage(){ try {
     const res = await fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
     const data = await res.json()
     document.body.style.backgroundImage = `url(${data.urls.regular})`
@@ -11,7 +11,9 @@ async () => { try {
 }
 }
 
-async () => { try {
+getImage()
+
+async function getCoin() { try {
     const res = await fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
     if (!res.ok) {
         throw Error("Something went wrong")
@@ -30,6 +32,8 @@ async () => { try {
     console.error(err)
 }
 }
+
+getCoin()
 
 function getCurrentTime() {
     const date = new Date()
